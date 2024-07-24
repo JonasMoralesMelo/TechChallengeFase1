@@ -3,6 +3,7 @@ using System.Text.Json;
 using TechChallengeFase1.Models.DTO;
 using TechChallengeFase1.Models;
 using TechChallengeFase1.Services.Interfaces;
+using TechChallengeFase1.Models.Entity;
 
 namespace TechChallengeFase1.Services
 {
@@ -31,6 +32,12 @@ namespace TechChallengeFase1.Services
                 }
             }
             return response;
+        }
+        public List<ContatosDTO> buscarRegiaoPorContato(List<Contatos> contatos)
+        {
+            List<int> ddds = contatos.Select(x => x.DDD).Distinct().ToList();
+            var dicionarioddds = ddds.Select(x => new {ddd = x, dddmodel = BuscarPorCodigoDDD(x).Result.DadosRetorno} ).ToDictionary(item => item.ddd, item => item.dddmodel.Estado);
+            return contatos.Select(x => new ContatosDTO(x, dicionarioddds[x.DDD])).ToList();
         }
     }
 }
