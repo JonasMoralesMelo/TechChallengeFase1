@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34714.143
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechChallengeFase1", "TechChallengeFase1\TechChallengeFase1.csproj", "{DA1FA2BB-7E2F-4364-83C0-07F2B3CA9E84}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TechChallengeFase1", "TechChallengeFase1\TechChallengeFase1.csproj", "{DA1FA2BB-7E2F-4364-83C0-07F2B3CA9E84}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechChallenge.Teste", "TechChallenge.Teste\TechChallenge.Teste.csproj", "{EA039C68-D721-4419-A056-8BA7DA0B8A55}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{DA1FA2BB-7E2F-4364-83C0-07F2B3CA9E84}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DA1FA2BB-7E2F-4364-83C0-07F2B3CA9E84}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DA1FA2BB-7E2F-4364-83C0-07F2B3CA9E84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA039C68-D721-4419-A056-8BA7DA0B8A55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA039C68-D721-4419-A056-8BA7DA0B8A55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA039C68-D721-4419-A056-8BA7DA0B8A55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA039C68-D721-4419-A056-8BA7DA0B8A55}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

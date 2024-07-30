@@ -38,8 +38,13 @@ namespace TechChallengeFase1.Controllers
         {
             try
             {
-                _contatoService.AdicionarContato(contato);
-                return Created($"/api/Contato/{contato}",contato);
+                if(ModelState.IsValid)
+                {
+                    _contatoService.AdicionarContato(contato);
+                    return Created($"/api/Contato/{contato}", contato);
+                }
+
+                return BadRequest(ModelState);
             }
             catch (Exception ex)
             {
