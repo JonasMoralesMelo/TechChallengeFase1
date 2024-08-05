@@ -20,19 +20,19 @@ namespace TechChallengeFase1.Controllers
             _brasilApiService = brasilApiService;
         }
 
-        [HttpGet("{DDD}/{Numero}")]
-        public IActionResult obterContato(int DDD, int Numero )
-        {
-            try
+            [HttpGet("{DDD}/{Numero}")]
+            public IActionResult obterContato(int DDD, int Numero )
             {
-                return Ok(_contatoService.ConsultarContato(DDD, Numero));
-            }
-            catch (Exception ex)
-            {
+                try
+                {
+                    return Ok(_contatoService.ConsultarContato(DDD, Numero));
+                }
+                catch (Exception ex)
+                {
 
-                throw new Exception($"Erro: {ex.Message}");
+                    throw new Exception($"Erro: {ex.Message}");
+                }
             }
-        }
         [HttpPost]
         public IActionResult adicionarContato(Contatos contato)
         {

@@ -5,7 +5,7 @@
 namespace TechChallengeFase1.Migrations
 {
     /// <inheritdoc />
-    public partial class Contatos : Migration
+    public partial class ContatosM : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
