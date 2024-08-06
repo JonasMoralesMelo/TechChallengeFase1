@@ -11,7 +11,7 @@ namespace TechChallengeFase1.Controllers
     public class ContatoController : ControllerBase
     {
         private readonly IContatoService _contatoService;
-        
+
         private readonly IBrasilApiService _brasilApiService;
 
         public ContatoController(IContatoService contatoService, IBrasilApiService brasilApiService)
@@ -20,25 +20,25 @@ namespace TechChallengeFase1.Controllers
             _brasilApiService = brasilApiService;
         }
 
-            [HttpGet("{DDD}/{Numero}")]
-            public IActionResult obterContato(int DDD, int Numero )
+        [HttpGet("{DDD}/{Numero}")]
+        public IActionResult obterContato(int DDD, int Numero)
+        {
+            try
             {
-                try
-                {
-                    return Ok(_contatoService.ConsultarContato(DDD, Numero));
-                }
-                catch (Exception ex)
-                {
-
-                    throw new Exception($"Erro: {ex.Message}");
-                }
+                return Ok(_contatoService.ConsultarContato(DDD, Numero));
             }
+            catch (Exception ex)
+            {
+
+                throw new Exception($"Erro: {ex.Message}");
+            }
+        }
         [HttpPost]
         public IActionResult adicionarContato(Contatos contato)
         {
             try
             {
-                if(ModelState.IsValid)
+                if (ModelState.IsValid)
                 {
                     _contatoService.AdicionarContato(contato);
                     return Created($"/api/Contato/{contato}", contato);
@@ -57,8 +57,12 @@ namespace TechChallengeFase1.Controllers
         {
             try
             {
-                _contatoService.AtualizarContato(contato);
-                return Ok(contato);
+                if (ModelState.IsValid)
+                {
+                    _contatoService.AtualizarContato(contato);
+                    return Ok(contato);
+                }
+                return BadRequest(ModelState);
             }
             catch (Exception ex)
             {
@@ -85,7 +89,7 @@ namespace TechChallengeFase1.Controllers
         {
             try
             {
-                List<Contatos> listacontatos = _contatoService.ConsultarContatoPorDDD(DDD);           
+                List<Contatos> listacontatos = _contatoService.ConsultarContatoPorDDD(DDD);
                 return Ok(_brasilApiService.buscarRegiaoPorContato(listacontatos));
             }
             catch (Exception ex)
