@@ -8,7 +8,6 @@ using Moq;
 using System.Text;
 using TechChallengeFase1.Controllers;
 using TechChallengeFase1.Data;
-using TechChallengeFase1.Migrations;
 using TechChallengeFase1.Models.Entity;
 using TechChallengeFase1.Services;
 using TechChallengeFase1.Services.Interfaces;
@@ -33,14 +32,14 @@ namespace TechChallenge.Teste
         [Fact]
 
         public void AdicionarContato_ContatoValido()
-        { 
+        {
             //Arrange
             var contato = new Contatos
             {
-               Nome = "fiap", 
-               DDD = 11, 
-               Telefone = 999999999, 
-               Email = "teste@teste.com"
+                Nome = "fiap",
+                DDD = 11,
+                Telefone = 999999999,
+                Email = "teste@teste.com"
             };
             _controller.ModelState.Clear();
 
@@ -86,7 +85,7 @@ namespace TechChallenge.Teste
             {
                 Nome = "Luana",
                 DDD = 41,
-                Telefone = 995104218,
+                Telefone = 999999999,
                 Email = "email.valido@example.com"
             };
             _mockContatoService.Setup(service => service.AdicionarContato(contato)).Throws(new Exception("Erro simulado"));
