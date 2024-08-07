@@ -2,7 +2,7 @@
 using TechChallengeFase1.Models;
 using AutoMapper;
 
-namespace TechChallengeFase1.Mapping
+namespace TechChallengeFase1.Data.Mapping
 {
     public class DDDMapping : Profile
     {

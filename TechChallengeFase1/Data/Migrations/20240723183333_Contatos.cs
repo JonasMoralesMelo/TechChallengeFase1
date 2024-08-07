@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace TechChallengeFase1.Migrations
+namespace TechChallengeFase1.Data.Migrations
 {
     /// <inheritdoc />
     public partial class ContatosM : Migration

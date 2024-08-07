@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using System.Globalization;
 using TechChallengeFase1.Data;
-using TechChallengeFase1.Mapping;
+using TechChallengeFase1.Data.Mapping;
 using TechChallengeFase1.Services;
 using TechChallengeFase1.Services.Interfaces;
 
